@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Detalhes do Cliente{% endblock %}
+
+{% block body %}
+<section class="container pt-5">
+    <h1 class="mb-3">Detalhes do Cliente</h1>
+
+    <table class="table table-sm table-striped">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td class="text-right">{{ cliente.id }}</td>
+            </tr>
+            <tr>
+                <th>Nome</th>
+                <td class="text-right">{{ cliente.nome }}</td>
+            </tr>
+            <tr>
+                <th>Cpf</th>
+                <td class="text-right">{{ cliente.cpf }}</td>
+            </tr>
+            <tr>
+                <th>Rg</th>
+                <td class="text-right">{{ cliente.rg }}</td>
+            </tr>
+            <tr>
+                <th>Data de Nascimento</th>
+                <td class="text-right">{{ cliente.dataNascimento ? cliente.dataNascimento|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Logradouro</th>
+                <td class="text-right">{{ cliente.logradouro }}, {{ cliente.numero }}</td>
+            </tr>
+            <tr>
+                <th>Complemento</th>
+                <td class="text-right">{{ cliente.complemento }}</td>
+            </tr>
+            <tr>
+                <th>Bairro</th>
+                <td class="text-right">{{ cliente.bairro }}</td>
+            </tr>
+            <tr>
+                <th>Cidade/UF</th>
+                <td class="text-right">{{ cliente.cidade }}/{{ cliente.uf }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="text-center">
+    <a class="btn btn-secondary" href="{{ path('clientes_index') }}">Voltar</a>
+
+    <a class="btn btn-warning" href="{{ path('clientes_edit', {'id': cliente.id}) }}">Editar</a>
+
+    {{ include('clientes/_delete_form.html.twig') }}
+    </div>
+</section>
+{% endblock %}

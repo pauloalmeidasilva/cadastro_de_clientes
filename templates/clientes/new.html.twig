@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Cadastrar Cliente{% endblock %}
+
+{% block body %}
+<section class="container pt-5">
+  <h1>Cadastrar Cliente</h1>
+
+  {{ include('clientes/_form.html.twig') }}
+
+	<div class="text-center">
+  	<a class="btn btn-secondary" href="{{ path('clientes_index') }}">Voltar</a>
+	</div>
+</section>
+{% endblock %}

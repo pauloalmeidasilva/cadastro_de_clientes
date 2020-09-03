@@ -1,0 +1,96 @@
+{{ form_start(form) }}
+	{{ form_errors(form) }}
+	<fieldset>
+		<legend>Dados Pessoais</legend>
+		<div class="form-group">
+			{{ form_label(form.nome, 'Nome do Cliente')}}
+			{{ form_widget(form.nome) }}
+			<small>{{ form_help(form.nome) }}</small>
+			<div class="form-error">
+					{{ form_errors(form.nome) }}
+			</div>
+		</div>
+		<div class="form-row">
+			<div class="form-group col-4">
+				{{ form_label(form.data_nascimento, 'Data de Nascimento')}}
+				{{ form_widget(form.data_nascimento) }}
+				<small>{{ form_help(form.data_nascimento) }}</small>
+				<div class="form-error">
+						{{ form_errors(form.data_nascimento) }}
+				</div>
+			</div>
+			<div class="form-group col-4">
+				{{ form_label(form.cpf, 'CPF')}}
+				{{ form_widget(form.cpf) }}
+				<small>{{ form_help(form.cpf) }}</small>
+				<div class="form-error">
+						{{ form_errors(form.cpf) }}
+				</div>
+			</div>
+			<div class="form-group col-4">
+				{{ form_label(form.rg, 'RG')}}
+				{{ form_widget(form.rg) }}
+				<small>{{ form_help(form.rg) }}</small>
+				<div class="form-error">
+						{{ form_errors(form.rg) }}
+				</div>
+			</div>
+		</div>
+	</fieldset>
+	<fieldset>
+		<legend>Dados Pessoais</legend>
+		<div class="form-row">
+			<div class="form-group col-10">
+				{{ form_label(form.logradouro, 'Endereço')}}
+				{{ form_widget(form.logradouro) }}
+				<small>{{ form_help(form.logradouro) }}</small>
+				<div class="form-error">
+						{{ form_errors(form.logradouro) }}
+				</div>
+			</div>
+			<div class="form-group col-2">
+				{{ form_label(form.numero, 'Nº')}}
+				{{ form_widget(form.numero) }}
+				<small>{{ form_help(form.numero) }}</small>
+				<div class="form-error">
+						{{ form_errors(form.numero) }}
+				</div>
+			</div>
+			<div class="form-group col-3">
+				{{ form_label(form.complemento, 'Complemento')}}
+				{{ form_widget(form.complemento) }}
+				<small>{{ form_help(form.complemento) }}</small>
+				<div class="form-error">
+						{{ form_errors(form.complemento) }}
+				</div>
+			</div>
+			<div class="form-group col-3">
+				{{ form_label(form.bairro, 'Bairro')}}
+				{{ form_widget(form.bairro) }}
+				<small>{{ form_help(form.bairro) }}</small>
+				<div class="form-error">
+						{{ form_errors(form.bairro) }}
+				</div>
+			</div>
+			<div class="form-group col-4">
+				{{ form_label(form.cidade, 'Cidade')}}
+				{{ form_widget(form.cidade) }}
+				<small>{{ form_help(form.cidade) }}</small>
+				<div class="form-error">
+						{{ form_errors(form.cidade) }}
+				</div>
+			</div>
+			<div class="form-group col-2">
+				{{ form_label(form.uf, 'Estado')}}
+				{{ form_widget(form.uf) }}
+				<small>{{ form_help(form.uf) }}</small>
+				<div class="form-error">
+						{{ form_errors(form.uf) }}
+				</div>
+			</div>
+		</div>
+	</fieldset>
+  <div class="text-center mb-2">
+    <button class="btn btn-success">{{ button_label|default('Salvar') }}</button>
+	</div>
+{{ form_end(form) }}

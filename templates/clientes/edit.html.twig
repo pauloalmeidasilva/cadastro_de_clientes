@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Editar Clientes{% endblock %}
+
+{% block body %}
+<section class="container pt-5">
+    <h1>Editar Clientes</h1>
+
+    {{ include('clientes/_form.html.twig', {'button_label': 'Alterar'}) }}
+
+    <div class="text-center">
+        <a class="btn btn-secondary" href="{{ path('clientes_index') }}">Voltar</a>
+
+        {{ include('clientes/_delete_form.html.twig') }}
+	</div>
+</section>
+{% endblock %}

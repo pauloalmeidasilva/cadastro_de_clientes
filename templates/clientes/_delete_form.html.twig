@@ -1,0 +1,5 @@
+<form class="d-inline" method="post" action="{{ path('clientes_delete', {'id': cliente.id}) }}" onsubmit="return confirm('Deseja realmente deletar este cliente?');">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ cliente.id) }}">
+    <button class="btn btn-danger">Deletar</button>
+</form>

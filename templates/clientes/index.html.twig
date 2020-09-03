@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Cadastro de Clientes{% endblock %}
+
+{% block body %}
+<section class="container pt-5">
+	<h1>Cadastro de Clientes</h1>
+
+	<table class="table table-hover table-striped">
+		<thead>
+			<tr>
+				<th>Id</th>
+				<th>Nome</th>
+				<th>Cpf</th>
+				<th>Rg</th>
+				<th>Data de Nascimento</th>
+				<th>Ações</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for cliente in clientes %}
+			<tr>
+				<td>{{ cliente.id }}</td>
+				<td>{{ cliente.nome }}</td>
+				<td>{{ cliente.cpf }}</td>
+				<td>{{ cliente.rg }}</td>
+				<td>{{ cliente.dataNascimento ? cliente.dataNascimento|date('d/m/Y') : '' }}</td>
+				<td>
+						<a class="btn btn-sm btn-info" href="{{ path('clientes_show', {'id': cliente.id}) }}">Ver</a>
+						<a class="btn btn-sm btn-warning" href="{{ path('clientes_edit', {'id': cliente.id}) }}">Editar</a>
+				</td>
+			</tr>
+			{% else %}
+			<tr>
+				<td class="text-center text-uppercase" colspan="6">no records found</td>
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+	<div class="text-right">
+		<a class="btn btn-primary" href="{{ path('clientes_new') }}">Novo Cliente</a>
+	</div>
+</section>
+{% endblock %}
